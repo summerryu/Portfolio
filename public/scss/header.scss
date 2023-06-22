@@ -1,0 +1,73 @@
+#header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    z-index: 99;
+    .center{
+        height: 130px;
+        align-items: center;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        .logo{
+            filter: invert(100%);
+            img{
+                width: 50%;
+                height: 20%;
+            }
+        }
+        .gnb{
+            display: flex;
+            li{
+                margin: 0 20px;
+                font-size: 14px;
+                a{
+                    color:#ffffff;
+                    font-weight: 600;
+                    
+                    transition: all 0.3s;
+                    span{
+                        position: relative;
+                        font-weight: normal;
+                        color:rgb(190, 52, 85);
+                        font-style: 12px;
+                    }
+                }
+            }
+            li.on{
+                a{
+                    span{
+                        &::before{
+                            content: "";
+                            top:-52%;
+                            right:10px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background: radial-gradient(circle, rgba(195,52,80,1) 0%, rgba(0,0,0,1) 100%);
+                            animation: lookonpage 0.7s linear infinite;
+                            animation-timing-function: ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes lookonpage {
+    0% { top: -52%; }
+    10% { top: -55%; }
+    20% { top: -58%; }
+    30% { top: -61%; }
+    40% { top: -64%; }
+    50% { top: -67%; }
+    60% { top: -70%; }
+    70% { top: -73%; }
+    80% { top: -76%; }
+    90% { top: -79%; }
+    100% { top: -82%; }
+}
