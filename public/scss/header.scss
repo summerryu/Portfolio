@@ -48,8 +48,7 @@
                             border-radius: 50%;
                             position: absolute;
                             background: radial-gradient(circle, rgba(195,52,80,1) 0%, rgba(0,0,0,1) 100%);
-                            animation: lookonpage 0.7s linear infinite;
-                            animation-timing-function: ease-in-out;
+                            animation: lookonpage 0.4s linear infinite alternate;
                         }
                     }
                 }
@@ -60,14 +59,5 @@
 
 @keyframes lookonpage {
     0% { top: -52%; }
-    10% { top: -55%; }
-    20% { top: -58%; }
-    30% { top: -61%; }
-    40% { top: -64%; }
-    50% { top: -67%; }
-    60% { top: -70%; }
-    70% { top: -73%; }
-    80% { top: -76%; }
-    90% { top: -79%; }
     100% { top: -82%; }
 }

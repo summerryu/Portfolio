@@ -87,21 +87,15 @@
 #section2{
     display: flex;
     justify-content: center;
-    position: relative;
     flex-wrap: wrap;
-    width: 100%;
     background-color: #202020;
-    height: 100%;
+    overflow: hidden;
     .center{
         display: flex;
-        justify-content: center;
         align-items: center;
         height: 100vh;
-        h2{
-            color:#fff;
-            font-size: 100px;
-            font-weight: bold;
-        }
+        width: 100%;
+        flex-wrap: wrap;
     }
 }
 #section3{
@@ -117,11 +111,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        h2{
-            color:#fff;
-            font-size: 100px;
-            font-weight: bold;
-        }
+        width: 100%;
     }
 }
 @keyframes colorchange {

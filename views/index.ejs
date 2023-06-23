@@ -10,10 +10,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
+    
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/set.css">
     <link rel="stylesheet" href="/css/animate.css">
+    <style>
+        .swiper-wrapper { align-items: center;}
+        .swiper-wrapper .swiper-slide { 
+            display: flex; 
+            width: 85%; height: 100%;
+            flex-wrap: wrap;
+        }
+        .swiper-wrapper .swiper-slide img { 
+            width: 50%; 
+            height: 100%;
+            border-radius: 25px;
+        }
+        .swiper-wrapper .swiper-slide .textbox {
+            border-radius: 25px;
+            margin-left: 10px;
+            width: 40%; 
+            height: 408px;
+            color:#fff;
+            background-color: #3b3b3b;  
+            position: relative;
+            z-index: 17;
+        }
+        .swiper-wrapper .swiper-slide .textbox h1{
+            margin: 20px;
+            font-weight: 600;
+            font-size: 25px;
+        }
+        .swiper-wrapper .swiper-slide .textbox .detail {
+            margin: 20px;
+            line-height: 30px;
+            font-weight: 300;
+        }
+        .swiper-wrapper .swiper-slide .textbox .detail span{
+            color:#1bcaff;
+            font-weight: 400;
+        }
+        .swiper-wrapper .swiper-slide .textbox p{
+            margin: 20px;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 300;
+        }
+        .swiper-wrapper .swiper-slide .textbox p span{
+            color:#1bcaff;
+            font-weight: 400;
+        }
+        .swiper-wrapper .swiper-slide .sub_content{
+            display: flex;
+            margin-top: 20px;
+            width:100%;
+            overflow: hidden;
+            height: 150px;
+        }
+        .swiper-wrapper .swiper-slide .sub_content img{
+            margin-right: 30px;
+            width: 29%;
+        }
+    </style>
 </head>
 <body>
     <%- include("header.ejs") %>
@@ -27,7 +86,7 @@
                 </h1>
                 <h2 style="padding-top: 15px;" class="animated 1 fadeInDown delay-2s">사용자들의 편의성을 고려한 웹사이트를 개발합니다</h2>
                 <p class="animated 1 fadeInDown delay-3s">웹접근성, 웹표준을 준수하여 마크업을 작성합니다.</p>
-                <p class="animated 1 fadeInDown delay-3s">EJS 템플릿 엔진과 Git을 활용한 버전 관리 및 협업 프로세스를 경험이 있습니다.</p>
+                <p class="animated 1 fadeInDown delay-3s">EJS 템플릿 엔진과 Git을 활용한 버전 관리 및 협업 프로세스 경험이 있습니다.</p>
                 <p class="animated 1 fadeInDown delay-3s">자바스크립트와 기본 웹 기술에 익숙하며, HTML5, CSS, SCSS 등을 다룰 수 있습니다.</p>
             </div>
             <div class="main_right">
@@ -37,7 +96,76 @@
     </div>
     <div id="section2">
         <div class="center">
-            <h2>섹션 2 표시용</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" >
+                  <div class="swiper-slide">
+                    <img src="/img/buyeo_top.png"/>
+                    <div class="textbox">
+                        <h1>부여문화재야행</h1>
+                        <ul class="detail">
+                            <li>22개의 뷰(views) 파일과 18개의 CSS 파일로 구성됩니다.</li>
+                            <li><span>Express, MongoDB, Passport</span> 등 라이브러리 사용합니다.</li>
+                            <li>사용 언어: <span>HTML5, 바닐라 JavaScript</span>를 사용합니다.</li>
+                            <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
+                        </ul>
+                        <p>부여문화재야행은 <span>회원가입</span>과 <span>게시판</span> 기능을 구현하며, 
+                            CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                            Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                            EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.</p>
+                            <p>또한, 부여문화재야행은 반응형으로 설계되어 있어 태블릿 버전과 모바일 버전에서도 사용할 수 있습니다.</p>
+                    </div>
+                    <div class="sub_content">
+                        <img src="/img/all_buyeo3.png">
+                        <img src="/img/all_buyeo.png">
+                        <img src="/img/all_buyeo2.png">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="/img/bok_top.png"/>
+                    <div class="textbox">
+                        <h1>문화재청 경복궁</h1>
+                        <ul class="detail">
+                            <li>10개의 뷰(views) 파일과 11개의 CSS 파일로 구성됩니다.</li>
+                            <li><span>Express, MongoDB</span> 등 라이브러리 사용합니다.</li>
+                            <li>사용 언어: <span>HTML5, 바닐라 JavaScript</span>를 사용합니다.</li>
+                            <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
+                        </ul>
+                        <p>문화재청은 <span>게시판</span> 기능을 구현하며, 
+                            CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                            Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                            EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.</p>
+                        <p>각 컨트롤러별로 페이지가 구축되어 있고, 컨트롤러 별 서브페이지는 탭 메뉴 형식으로 구현되어 있습니다.</p>
+                    </div>
+                    <div class="sub_content">
+                        <img src="/img/all_bok.png">
+                        <img src="/img/all_bok2.png">
+                        <img src="/img/all_bok3.png">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="/img/nabi_top.png"/>
+                    <div class="textbox">
+                        <h1>복나비 한복</h1>
+                        <ul class="detail">
+                            <li>15개의 뷰(views) 파일과 15개의 CSS 파일로 구성됩니다.</li>
+                            <li><span>Express, MongoDB </span> 등 라이브러리 사용합니다.</li>
+                            <li>사용 언어: <span>HTML5, 바닐라 JavaScript, 제이쿼리</span>를 사용합니다.</li>
+                            <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
+                        </ul>
+                        <p>복나비 한복은 <span>게시판</span> 기능을 넣은 예약게시판 구현되어있습니다.
+                            CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                            Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                            EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.</p>
+                            <p>또한, 복나비 한복은 반응형으로 설계되어 있어 태블릿 버전과 모바일 버전에서도 사용할 수 있습니다.</p>
+                    </div>
+                    <div class="sub_content">
+                        <img src="/img/all_nabi1.png">
+                        <img src="/img/all_nabi2.png">
+                        <img src="/img/all_nabi3.png">
+                    </div>
+                  </div>
+              </div>
+            </div>
         </div>
     </div>
     <div id="section3">
@@ -45,6 +173,25 @@
             <h2>섹션 3 표시용</h2>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        });
+    </script>
     <script src="/js/main.js"></script>
 </body>
 </html>
