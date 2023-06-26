@@ -75,12 +75,12 @@
 }
 #section1 .center .main_right {
   transform: rotate(180deg);
-  position: absolute;
+  position: fixed;
   height: 100%;
   right: -100px;
   bottom: -600px;
   transition: all 0.5s;
-  z-index: 10;
+  z-index: 2;
 }
 
 #section2 {

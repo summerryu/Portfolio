@@ -20,7 +20,7 @@ MongoClient.connect("mongodb+srv://saunogq:dudwndi7@cluster0.xaury3g.mongodb.net
     if(err) { return console.log(err); }
 
     //위에서 만든 db변수에 최종연결 ()안에는 mongodb atlas 사이트에서 생성한 데이터베이스 이름
-    db = result.db("ex5");
+    db = result.db("contact");
 
     //db연결이 제대로 됬다면 서버실행
     app.listen(port,function(){
@@ -32,6 +32,23 @@ MongoClient.connect("mongodb+srv://saunogq:dudwndi7@cluster0.xaury3g.mongodb.net
 app.get("/",function(req,res){
     res.render("index.ejs");
 });
+
+
+  app.post("/contactdb",(req,res)=>{
+   
+    db.collection("count").findOne({name:"이름"},(err,countResult)=>{
+        db.collection("contact_form").insertOne({
+            num:countResult.count,
+            name: req.body.name,
+            email: req.body.email,
+            message: req.body.message
+        },(err,result)=>{
+            db.collection("count").updateOne({name:"이름"},{$inc:{count:1}},(err,result)=>{
+                res.send("<script>alert('감사합니다!'); location.href='/#section3'; </script>")
+            })
+        })
+    })
+})
 
 
 
