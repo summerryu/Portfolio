@@ -4,7 +4,12 @@ const section3 = document.querySelector("#section3");
 
 const sections = [section1,section2,section3];
 const menus = document.querySelectorAll("#header .center .gnb li");
+const bg = document.querySelector(".main_right");
+const spancolors = ["one","two","three"];
+const bgColorChange = ["one","two","three"];
+const headerspan = document.querySelectorAll("#header .center .gnb span");
 
+// 섹션 이동 시 메뉴 디자인 변경 스크립트 시작 //
 window.addEventListener("scroll", () => {
     let scTop = window.scrollY;
     for (let i = 0; i < sections.length; i++) {
@@ -12,37 +17,71 @@ window.addEventListener("scroll", () => {
       if (scTop >= offsetTop) {
         for (let j = 0; j < menus.length; j++) {
           menus[j].classList.remove("on");
+          headerspan[j].classList.remove(spancolors[j]);
+          bg.classList.remove(bgColorChange[j]);
         }
         menus[i].classList.add("on");
+        headerspan[i].classList.add(spancolors[i])
+        bg.classList.add(bgColorChange[i]);
       }
     }
 });
-  
+// 섹션 이동 시 메뉴 디자인 변경 스크립트 끝 //
+
+
+
+// 메뉴 클릭 시 해당 섹션으로 이동 스크립트 시작 //
 for (let i = 0; i < menus.length; i++) {
     menus[i].addEventListener("click", (event) => {
-        event.preventDefault();
-      for (let j = 0; j < menus.length; j++) {
-        menus[j].classList.remove("on");
-      }
-      menus[i].classList.add("on");
+      event.preventDefault();
       window.scrollTo({
         top:sections[i].offsetTop,
         behavior:"smooth"
         })
     });
 }
+// 메뉴 클릭 시 해당 섹션으로 이동 스크립트 끝 //
 
 
 
+
+// 섹션 스크롤 이동 스크립트 시작 //
+window.addEventListener("wheel", function(e){
+	e.preventDefault();
+},{passive : false});
+
+let $html = $("html");
+let page = 1;
+let lastPage = $(".center").length;
+
+$html.animate({scrollTop:0},10);
+
+$(window).on("wheel", function(e){
+ 
+	if($html.is(":animated")) return;
+ 
+	if(e.originalEvent.deltaY > 0){
+		if(page== lastPage) return;
+ 
+		page++;
+	}else if(e.originalEvent.deltaY < 0){
+		if(page == 1) return;
+ 
+		page--;
+	}
+	let posTop = (page-1) * $(window).height();
+ 
+	$html.animate({scrollTop : posTop});
+ 
+});
+// 섹션 스크롤 이동 스크립트 끝//
+
+
+
+
+// 섹션2 책갈피 클릭 시 발생하는 이벤트 //
 const portFolioList = document.querySelectorAll(".swiper-slide .btn");
-// console.log(portFolioList[0].querySelectorAll("li"))
-
-// const portFolioText = document.querySelectorAll(".swiper-slide");
 const portFolioText = document.querySelectorAll(".swiper-slide .textbox");
-// console.log(portFolioText[0].querySelectorAll(".text_list"))
-
-
-
 for(let i=0; i<portFolioList.length; i++){
 
     for(let j=0; j<portFolioList[i].querySelectorAll("li").length; j++){
@@ -61,9 +100,12 @@ for(let i=0; i<portFolioList.length; i++){
     }
 }
 
+// 섹션2 책갈피 클릭 시 발생하는 이벤트 끝 //
 
 
 
+
+// 이미지 변경 스크립트 시작 //
 $(function() {
   const imageGroups = [
     {
@@ -102,3 +144,5 @@ $(function() {
     });
   }
 });
+
+// 이미지 변경 스크립트 끝 //

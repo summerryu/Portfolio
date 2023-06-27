@@ -24,6 +24,28 @@
             width: 85%; 
             height: 100%;
             flex-wrap: wrap;
+            position: relative;
+        }
+        .swiper-wrapper .swiper-slide .click_ikon{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            top:-60px;
+            right:620px;
+            transform: rotate(250deg);
+        }
+        .swiper-wrapper .swiper-slide .click_ikon img{
+            width: 100%;
+            height: 100%;
+            filter: opacity(0.7) drop-shadow(0 0 0 #3bc7ff);
+        }
+        .swiper-wrapper .swiper-slide .click_text{
+            position: absolute;
+            top:-40px;
+            right:590px;
+            color:#fff;
+            font-size: 14px;
+            transform: rotate(350deg);
         }
         .swiper-wrapper .swiper-slide .btn{
             position:absolute;
@@ -107,7 +129,7 @@
             width:100%;
             height: 150px;
         }
-        .swiper-wrapper .swiper-slide .sub_content > div{
+        .swiper-wrapper .swiper-slide .sub_content >div{
             width: 17%;
             margin-right: 30px;
             overflow: hidden;
@@ -120,7 +142,7 @@
             position: relative;
             border-radius: 0px;
         }
-        .swiper-wrapper .swiper-slide .sub_content >div .subimg:hover{
+        .swiper-wrapper .swiper-slide .sub_content > div .subimg:hover{
             transform: scale(1.2);
             transition: all 0.4s;
         }
@@ -151,19 +173,18 @@
             z-index: 17;
         }
         .swiper-wrapper .swiper-slide .textbox h1{
-            margin: 20px;
             font-weight: 600;
             font-size: 20px;
         }
         .swiper-wrapper .swiper-slide .textbox p{
             margin: 20px;
             font-size: 13px;
-            line-height: 25px;
+            line-height: 20px;
             font-weight: 300;
         }
         .swiper-wrapper .swiper-slide .textbox .detail {
             margin: 20px;
-            line-height: 25px;
+            line-height: 20px;
             font-weight: 300;
             font-size: 13px;
         }
@@ -172,6 +193,7 @@
             font-weight: 400;
         }
         }
+        
     </style>
 </head>
 <body>
@@ -189,7 +211,7 @@
                 <p class="animated 1 fadeInDown delay-3s">EJS 템플릿 엔진과 Git을 활용한 버전 관리 및 협업 프로세스 경험이 있습니다.</p>
                 <p class="animated 1 fadeInDown delay-3s">자바스크립트와 기본 웹 기술에 익숙하며, HTML5, CSS, SCSS 등을 다룰 수 있습니다.</p>
             </div>
-            <div class="main_right">
+            <div class="main_right one">
                 <img class="animated infinite flash slower 1000s" style="animation-duration: 7s;" src="/img/visual_bg.png">
             </div>
         </div>
@@ -200,18 +222,24 @@
                 <div class="swiper-wrapper" >
                   <div class="swiper-slide">
                     <img class="main_img" src="/img/buyeo_top.png"/>
+                    <div class="click_ikon">
+                        <img class="animated infinite  pulse" src="/img/click.png">
+                    </div>
+                    <div class="click_text">
+                        <p>click!</p>
+                    </div>
                     <ul class="btn">
                         <li class="change"><a href="#"></a></li>
                         <li><a href="#"></a></li>
                     </ul>
                     <div class="textbox">
-                        <h1>부여문화재야행</h1>
+                        <h1 style=" margin: 30px 20px;">부여문화재야행</h1>
                         <div class="text_list change">
                             <p>해당 포트폴리오 주소 : <a href="#"  target="_blank" style="color: #1bcaff;">추후 추가</a></p>
                             <ul class="detail">
                                 <li>작업소요기간 : 2주</li>
                                 <li>부여문화재야행 공식 홈페이지의 디자인, 기능 및 콘텐츠를 참고하여 제작되었습니다</li>
-                                <li>이 포트폴리오 웹사이트는 벤치마킹을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
+                                <li>이 포트폴리오 웹사이트는 <span>벤치마킹</span>을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
                                 <li>또한, 부여문화재야행 공식 홈페이지에서 제공하는 기능들을 고려하여 유사한 기능을 구현하였습니다.</li>
                                 <li>자세한 내용은 링크를 통해 확인하실 수 있습니다.</li>
                             </ul>
@@ -224,8 +252,8 @@
                                 <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
                             </ul>
                             <p>부여문화재야행은 <span>회원가입</span>과 <span>게시판</span> 기능을 구현하며, 
-                                CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
-                                Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                                SCSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                                <span>Express</span>와 <span>MongoDB</span>를 사용하여 서버와 <span>데이터베이스</span>를 연결하고, 
                                 EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.</p>
                                 <p>또한, 부여문화재야행은 반응형으로 설계되어 있어 태블릿 버전과 모바일 버전에서도 사용할 수 있습니다.</p>
                         </div>
@@ -246,21 +274,27 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
+                    <div class="click_ikon">
+                        <img class="animated infinite  pulse" src="/img/click.png">
+                    </div>
+                    <div class="click_text">
+                        <p>click!</p>
+                    </div>
                     <ul class="btn">
                         <li class="change"><a href="#"></a></li>
                         <li><a href="#"></a></li>
                     </ul>
                     <img class="main_img2" src="/img/nabi_top.png"/>
                     <div class="textbox">
-                        <h1>복나비 한복</h1>
+                        <h1 style=" margin: 30px 20px;">복나비 한복</h1>
                         <div class="text_list change">
                             <p>해당 포트폴리오 주소 : <a href="#"  target="_blank" style="color: #1bcaff;">추후 추가</a></p>
                             <ul class="detail">
                                 <li>작업소요기간 : 2주</li>
                                 <li>복나비 소성희 한복 공식 홈페이지의 디자인, 기능 및 콘텐츠를 참고하여 제작되었습니다</li>
-                                <li>이 포트폴리오 웹사이트는 벤치마킹을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
-                                <li>주요 수정사항으로는 서브페이지의 디자인과 메뉴 등 세부 디자인을 조정하였으며, 게시판 기능을 추가하여
-                                    예약 시스템을 좀 더 편하게 이용할 수 있는 기능을 구현하였습니다.</li>
+                                <li>이 포트폴리오 웹사이트는 <span>벤치마킹</span>을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
+                                <li>주요 <span>수정사항</span>으로는 서브페이지의 디자인과 메뉴 등 세부 디자인을 조정하였으며, 게시판 기능을 추가하여
+                                    <span>예약 시스템</span>을 좀 더 편하게 이용할 수 있는 기능을 구현하였습니다.</li>
                                 <li>자세한 내용은 링크를 통해 확인하실 수 있습니다.</li>
                             </ul>
                         </div>
@@ -272,8 +306,8 @@
                                 <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
                             </ul>
                             <p>복나비 한복은 <span>게시판</span> 기능을 넣은 예약게시판 구현되어있습니다.
-                                CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
-                                Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                                SCSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                                <span>Express</span>와 <span>MongoDB</span>를 사용하여 서버와 <span>데이터베이스</span>를 연결하고, 
                                 EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.
                             </p>
                                 <p>또한, 복나비 한복은 반응형으로 설계되어 있어 태블릿 버전과 모바일 버전에서도 사용할 수 있습니다.</p>
@@ -295,21 +329,27 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
+                    <div class="click_ikon">
+                        <img class="animated infinite pulse" src="/img/click.png">
+                    </div>
+                    <div class="click_text">
+                        <p>click!</p>
+                    </div>
                     <ul class="btn">
                         <li class="change"><a href="#"></a></li>
                         <li><a href="#"></a></li>
                     </ul>
                     <img class="main_img3" src="/img/bok_top.png"/>
                     <div class="textbox">
-                        <h1>문화재청 경복궁</h1>
+                        <h1 style=" margin: 30px 20px;">문화재청 경복궁</h1>
                         <div class="text_list change">
                             <p>해당 포트폴리오 주소 : <a href="#"  target="_blank" style="color: #1bcaff;">추후 추가</a></p>
                             <ul class="detail">
                                 <li>작업소요기간 : 2주</li>
                                 <li>문화재청 경복궁 공식 홈페이지의 디자인, 기능 및 콘텐츠를 참고하여 제작되었습니다</li>
-                                <li>이 포트폴리오 웹사이트는 벤치마킹을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
-                                <li>주요 수정사항으로는 서브페이지의 디자인과 메뉴 등 세부 디자인을 조정하였으며, 
-                                    탭메뉴 형식을 이용하여 서브페이지 화면전환을 구현했습니다. </li>
+                                <li>이 포트폴리오 웹사이트는 <span>벤치마킹</span>을 통해 원본 사이트의 디자인 요소, 레이아웃, 색상 선택, 그래픽 및 이미지 사용 등을 참고하였습니다.</li>
+                                <li>주요 <span>수정사항</span>으로는 서브페이지의 디자인과 메뉴 등 세부 디자인을 조정하였으며, 
+                                    <span>탭메뉴</span> 형식을 이용하여 서브페이지 화면전환을 구현했습니다. </li>
                                 <li>자세한 내용은 링크를 통해 확인하실 수 있습니다.</li>
                             </ul>
                         </div>
@@ -321,17 +361,25 @@
                                 <li>서버 측 템플릿 엔진으로 <span>EJS</span>를 사용합니다.</li>
                             </ul>
                             <p>문화재청은 <span>게시판</span> 기능을 구현하며, 
-                                CSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
-                                Express와 MongoDB를 사용하여 서버와 데이터베이스를 연결하고, 
+                                SCSS 파일로 페이지 스타일과 레이아웃을 조정합니다. 
+                                <span>Express</span>와 <span>MongoDB</span>를 사용하여 <span>서버</span>와 <span>데이터베이스</span>를 연결하고, 
                                 EJS를 통해 동적인 페이지를 생성하고 데이터를 표시합니다.</p>
                             <p>각 컨트롤러별로 페이지가 구축되어 있고, 컨트롤러 별 서브페이지는 탭 메뉴 형식으로 구현되어 있습니다.</p>
                         </div>
                     </div>
                     <div class="sub_content">
-                        <div class="sizeUP3"><img class="subimg" src="/img/bok_top.png"></div>
-                        <div class="sizeUP3"><img class="subimg" src="/img/all_bok.png"></div>
-                        <div class="sizeUP3"><img class="subimg" src="/img/all_bok2.png"></div>
-                        <div class="sizeUP3"><img class="subimg" src="/img/all_bok3.png"></div>
+                        <div class="sizeUP3">
+                            <img class="subimg" src="/img/bok_top.png">
+                        </div>
+                        <div class="sizeUP3">
+                            <img class="subimg" src="/img/all_bok.png">
+                        </div>
+                        <div class="sizeUP3">
+                            <img class="subimg" src="/img/all_bok2.png">
+                        </div>
+                        <div class="sizeUP3">
+                            <img class="subimg" src="/img/all_bok3.png">
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -342,26 +390,28 @@
         <div class="center">
             <div class="contact_box">
                 <div class="left_box">
-                    <h1>Profile</h1>
+                    <h1>반갑습니다!</h1>
+                    <p>함께 일하고 협업하는 기회를 소중히 여기며 연락 기다리고 있습니다. 더 많은 소통과 성장을 위해 이야기 나누고 싶습니다. 언제든 연락주세요!</p>
                     <ul class="Profile">
                         <li><span>e-mail : </span>saunogq2@naver.com</li>
-                        <li><span>github : </span><a href="https://github.com/summerryu" target="_blank" style="color: #1bcaff;">https://github.com/summerryu</a></li>
-                        <li><span>t-story : </span><a href="https://saunogq.tistory.com/" target="_blank" style="color: #1bcaff;">https://saunogq.tistory.com/</a></li>
+                        <li><span>github : </span><a href="https://github.com/summerryu" target="_blank" style="color: #ff8800;">https://github.com/summerryu</a></li>
+                        <li><span>t-story : </span><a href="https://saunogq.tistory.com/" target="_blank" style="color: #ff8800;">https://saunogq.tistory.com/</a></li>
                         <li><span>phone : </span>010 - 7135 - 7230</li>
                     </ul>
                 </div>
                 <div class="right_box">
                     <h1>Contact</h1>
                     <p>페이지를 방문해주셔서 감사합니다!</p>
+                    <p>확인 후 연락 드리겠습니다 !</p>
                     <form id="contact" action="/contactdb" method="post">
                         <label for="inputName">
-                            <input type="text" name="name" id="inputName" placeholder="name">
+                            <input type="text" name="name" id="inputName" placeholder="Name">
                         </label>
                         <label for="inputemail">
                             <input type="text" name="email" id="inputemail" placeholder="E-mail">
                         </label>
                         <label for="inputmessage">
-                            <textarea id="inputmessage" name="message" placeholder="message"></textarea>
+                            <textarea id="inputmessage" name="message" placeholder="Message"></textarea>
                         </label>
                         <button type="submit">전송</button>
                     </form>

@@ -24,21 +24,31 @@
                 margin: 0 20px;
                 font-size: 14px;
                 a{
-                    color:#ffffff;
-                    font-weight: 600;
-                    
+                    color:#e4e4e4;
                     transition: all 0.3s;
-                    span{
+                    .one{
                         position: relative;
                         font-weight: normal;
                         color:rgb(190, 52, 85);
+                        font-style: 12px;
+                    }
+                    .two{
+                        position: relative;
+                        font-weight: normal;
+                        color:#1bcaff;
+                        font-style: 12px;
+                    }
+                    .three{ 
+                        position: relative;
+                        font-weight: normal;
+                        color:#ff8800;
                         font-style: 12px;
                     }
                 }
             }
             li.on{
                 a{
-                    span{
+                    .one{
                         &::before{
                             content: "";
                             top:-52%;
@@ -48,6 +58,32 @@
                             border-radius: 50%;
                             position: absolute;
                             background: radial-gradient(circle, rgba(195,52,80,1) 0%, rgba(0,0,0,1) 100%);
+                            animation: lookonpage 0.4s linear infinite alternate;
+                        }
+                    }
+                    .two{
+                        &::before{
+                            content: "";
+                            top:-52%;
+                            right:10px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background: radial-gradient(circle, #1bcaff 0%, rgba(255,255,255,1) 100%);
+                            animation: lookonpage 0.4s linear infinite alternate;
+                        }
+                    }
+                    .three{
+                        &::before{
+                            content: "";
+                            top:-52%;
+                            right:10px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background: radial-gradient(circle, #ff8800 0%, rgba(255,255,255,1) 100%);
                             animation: lookonpage 0.4s linear infinite alternate;
                         }
                     }
