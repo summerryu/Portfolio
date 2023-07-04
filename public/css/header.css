@@ -34,13 +34,13 @@
 #header .center .gnb li a .one {
   position: relative;
   font-weight: normal;
-  color: rgb(190, 52, 85);
+  color: #ff8800;
   font-style: 12px;
 }
 #header .center .gnb li a .two {
   position: relative;
   font-weight: normal;
-  color: #1bcaff;
+  color: #ff8800;
   font-style: 12px;
 }
 #header .center .gnb li a .three {
@@ -49,45 +49,62 @@
   color: #ff8800;
   font-style: 12px;
 }
+#header .center .gnb li a .four {
+  font-style: 12px;
+  position: relative;
+  font-weight: normal;
+  color: #ff8800;
+}
 #header .center .gnb li.on a .one::before {
   content: "";
-  top: -52%;
+  top: -62%;
   right: 10px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  background: radial-gradient(circle, rgb(195, 52, 80) 0%, rgb(0, 0, 0) 100%);
+  background: radial-gradient(circle, #ff8800 0%, rgb(0, 0, 0) 100%);
   animation: lookonpage 0.4s linear infinite alternate;
 }
 #header .center .gnb li.on a .two::before {
   content: "";
-  top: -52%;
+  top: -62%;
   right: 10px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  background: radial-gradient(circle, #1bcaff 0%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(circle, #ff8800 0%, rgb(0, 0, 0) 100%);
   animation: lookonpage 0.4s linear infinite alternate;
 }
 #header .center .gnb li.on a .three::before {
   content: "";
-  top: -52%;
+  top: -62%;
   right: 10px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  background: radial-gradient(circle, #ff8800 0%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(circle, #ff8800 0%, rgb(0, 0, 0) 100%);
+  animation: lookonpage 0.4s linear infinite alternate;
+}
+#header .center .gnb li.on a .four::before {
+  content: "";
+  top: -62%;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  background: radial-gradient(circle, #ff8800 0%, rgb(0, 0, 0) 100%);
   animation: lookonpage 0.4s linear infinite alternate;
 }
 
 @keyframes lookonpage {
   0% {
-    top: -52%;
+    top: -62%;
   }
   100% {
-    top: -82%;
+    top: -92%;
   }
 }

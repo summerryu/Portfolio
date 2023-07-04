@@ -1,12 +1,12 @@
 const section1 = document.querySelector("#section1");
 const section2 = document.querySelector("#section2");
 const section3 = document.querySelector("#section3");
-
-const sections = [section1,section2,section3];
+const section4 = document.querySelector("#section4");
+const sections = [section1,section2,section3,section4];
 const menus = document.querySelectorAll("#header .center .gnb li");
 const bg = document.querySelector(".main_right");
-const spancolors = ["one","two","three"];
-const bgColorChange = ["one","two","three"];
+const spancolors = ["one","two","three","four"];
+const bgColorChange = ["one","two","three","four"];
 const headerspan = document.querySelectorAll("#header .center .gnb span");
 
 // 섹션 이동 시 메뉴 디자인 변경 스크립트 시작 //
@@ -79,7 +79,7 @@ $(window).on("wheel", function(e){
 
 
 
-// 섹션2 책갈피 클릭 시 발생하는 이벤트 //
+// 섹션3 책갈피 클릭 시 발생하는 이벤트 //
 const portFolioList = document.querySelectorAll(".swiper-slide .btn");
 const portFolioText = document.querySelectorAll(".swiper-slide .textbox");
 for(let i=0; i<portFolioList.length; i++){
@@ -119,15 +119,22 @@ $(function() {
     {
       sizeUPSelector: ".sizeUP3",
       mainImgSelector: ".main_img3"
+    },
+    {
+      sizeUPSelector: ".sizeUP4",
+      mainImgSelector: ".main_img4"
+    },
+    {
+      sizeUPSelector: ".sizeUP5",
+      mainImgSelector: ".main_img5"
     }
   ];
 
   imageGroups.forEach(function(group) {
-    let currentIndex = 0;
+    const currentIndex = 0;
     const $sizeUP = $(group.sizeUPSelector);
     const $mainImg = $(group.mainImgSelector);
     const images = $sizeUP.find("img");
-    let timerId = null;
 
     // 이미지 클릭 이벤트
     $sizeUP.on("click", function() {
@@ -135,14 +142,13 @@ $(function() {
       changeImage(src, $mainImg, $sizeUP);
       currentIndex = $sizeUP.index(this);
     });
-  });
-
-  // 이미지 변경 함수
-  function changeImage(src, $mainImg, $sizeUP) {
-    $mainImg.fadeOut(400, function() {
-      $mainImg.attr("src", src).fadeIn(400);
+    // 이미지 변경 함수
+    function changeImage(src, $mainImg, $sizeUP) {
+      $mainImg.fadeOut(400, function() {
+        $mainImg.attr("src", src).fadeIn(400);
+        });
+      }
     });
-  }
 });
 
 // 이미지 변경 스크립트 끝 //

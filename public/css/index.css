@@ -24,7 +24,7 @@
 }
 #section1 .center .main_left h2 {
   font-size: 22px;
-  color: rgb(190, 52, 85);
+  color: ff8800;
   font-weight: 400;
   margin: 20px 0;
 }
@@ -45,7 +45,7 @@
   position: absolute;
   left: 0;
   bottom: -5px;
-  background-color: rgb(190, 52, 85);
+  background-color: #ff8800;
 }
 #section1 .center .main_left p {
   margin: 20px 0;
@@ -61,9 +61,10 @@
   bottom: -600px;
   transition: all 0.5s;
   z-index: 1;
+  filter: opacity(0.7) drop-shadow(0 0 0 #ff8800);
 }
 #section1 .center .main_right.two {
-  filter: opacity(0.7) drop-shadow(0 0 0 #03e2ff);
+  filter: opacity(0.7) drop-shadow(0 0 0 #ff8800);
   transform: rotate(180deg);
   position: fixed;
   height: 100%;
@@ -82,23 +83,18 @@
   transition: all 0.5s;
   z-index: 1;
 }
+#section1 .center .main_right.four {
+  filter: opacity(0.7) drop-shadow(0 0 0 #ff8800);
+  transform: rotate(180deg);
+  position: fixed;
+  height: 100%;
+  right: -100px;
+  bottom: -600px;
+  transition: all 0.5s;
+  z-index: 1;
+}
 
 #section2 {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #202020;
-  overflow: hidden;
-}
-#section2 .center {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-#section3 {
   display: flex;
   justify-content: center;
   position: relative;
@@ -106,72 +102,86 @@
   width: 100%;
   background-color: #202020;
   height: 100%;
+  font-family: "NanumSquareNeo-Variable";
 }
-#section3 .center {
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+#section2 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
+  color: #fff;
   position: relative;
+  width: 100%;
+  overflow: hidden;
   z-index: 95;
 }
-#section3 .center .contact_box {
+#section2 .center .profile_box {
+  width: 55%;
+  height: 60%;
   background-color: #3b3b3b;
   border-radius: 30px;
-  width: 1000px;
-  height: 500px;
   display: flex;
-  justify-content: space-between;
 }
-#section3 .center .contact_box > div {
-  display: flex;
-  flex-direction: column;
+#section2 .center .profile_box .profile_box_left {
   width: 50%;
-  height: 500px;
-  margin-left: 65px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#section3 .center .contact_box > div > h1 {
-  margin-top: 50px;
-  height: 50px;
+#section2 .center .profile_box .profile_box_left .profile_box_left_text {
+  padding: 35px;
+}
+#section2 .center .profile_box .profile_box_left .profile_box_left_text h1 {
   font-size: 30px;
-  color: #ff8800;
-  padding: 20px 0;
-  font-family: "SBAggroB";
-  font-weight: 300;
-  letter-spacing: 3px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 30px 0;
 }
-@font-face {
-  font-family: "SBAggroB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
+#section2 .center .profile_box .profile_box_left .profile_box_left_text h1 span {
+  position: relative;
+  padding: 0 10px;
 }
-#section3 .center .contact_box .left_box {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text h1 span::after {
+  content: "";
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#section2 .center .profile_box .profile_box_left .profile_box_left_text p {
+  color: #eeeeee;
+  font-size: 14px;
+  line-height: 25px;
+}
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box {
+  margin-top: 30px;
   position: relative;
   z-index: 95;
 }
-#section3 .center .contact_box .left_box p {
-  color: #eeeeee;
-  font-size: 14px;
-  margin-bottom: 10px;
-  line-height: 20px;
-}
-#section3 .center .contact_box .left_box .Profile li {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box .Profile li {
   font-size: 14px;
   line-height: 40px;
   margin-left: 20px;
   color: #eeeeee;
   list-style-type: "👍";
 }
-#section3 .center .contact_box .left_box .Profile li span {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box .Profile li span {
   color: #eeeeee;
 }
-#section3 .center .contact_box .left_box .Profile li a {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box .Profile li a {
   color: #eeeeee;
   position: relative;
 }
-#section3 .center .contact_box .left_box .Profile li a:hover::after {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box .Profile li a:hover::after {
   content: "";
   position: absolute;
   background-color: #ff8800;
@@ -180,54 +190,212 @@
   left: 0;
   bottom: -3px;
 }
-#section3 .center .contact_box .left_box::after {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box::after {
   display: block;
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 50px;
+  left: 40px;
+  bottom: -100px;
   background: url("/img/cat1.png") no-repeat;
   background-size: cover;
   width: 200px;
   height: 110px;
   z-index: 98;
 }
-#section3 .center .contact_box .left_box::before {
+#section2 .center .profile_box .profile_box_left .profile_box_left_text .left_box::before {
   display: block;
   content: "";
   position: absolute;
-  left: 140px;
-  bottom: 50px;
+  left: 210px;
+  bottom: -100px;
   background: url("/img/cat2.png") no-repeat;
   background-size: cover;
   width: 200px;
   height: 110px;
   z-index: 98;
 }
-#section3 .center .contact_box .right_box {
-  line-height: 20px;
+#section2 .center .profile_box .profile_box_right {
+  border-left: 1px solid #444444;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#section3 .center .contact_box .right_box p {
+#section2 .center .profile_box .profile_box_right .profile_box_right_text {
+  padding: 35px;
+  margin-left: 35px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 30px 0;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text h1 span {
+  position: relative;
+  padding: 0 10px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text h1 span::after {
+  content: "";
+  height: 100%;
+  width: 3px;
+  background-color: #ff8800;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .study li {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .study li p {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .study li .study_group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .study li .study_group li {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .skil {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  line-height: 30px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .skil li {
+  display: flex;
+  width: 100%;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .skil li p {
+  color: #ff8800;
+  width: 30%;
+  font-size: 14px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .skil li .skil_detail {
+  display: flex;
+  margin-left: 50px;
+}
+#section2 .center .profile_box .profile_box_right .profile_box_right_text .skil li .skil_detail li {
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+#section3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #202020;
+  overflow: hidden;
+}
+#section3 .center {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#section4 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #202020;
+  height: 100%;
+}
+#section4 .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 95;
+}
+#section4 .center .contact_box {
+  background-color: #3b3b3b;
+  border-radius: 30px;
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+#section4 .center .contact_box .contact_title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 800;
+  color: #ff8800;
+  letter-spacing: 2px;
+}
+#section4 .center .contact_box .left_box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section4 .center .contact_box .left_box .contact_img_box {
+  width: 400px;
+  height: 400px;
+}
+#section4 .center .contact_box .left_box .contact_img_box img {
+  filter: opacity(0.9) drop-shadow(0 0 0 #ff8800);
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+}
+#section4 .center .contact_box .right_box {
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#section4 .center .contact_box .right_box h1 {
+  color: #ff8800;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+#section4 .center .contact_box .right_box p {
   color: #eeeeee;
   font-size: 14px;
 }
-#section3 .center .contact_box .right_box #contact {
+#section4 .center .contact_box .right_box #contact {
   margin: 20px 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   border: none;
-  width: 80%;
+  width: 100%;
 }
-#section3 .center .contact_box .right_box #contact input {
-  width: 90%;
+#section4 .center .contact_box .right_box #contact input {
+  width: 80%;
   height: 25px;
   margin: 5px 0;
 }
-#section3 .center .contact_box .right_box #contact input::-moz-placeholder {
+#section4 .center .contact_box .right_box #contact input::-moz-placeholder {
   padding: 10px;
   font-family: "NanumSquareNeo-Variable";
 }
-#section3 .center .contact_box .right_box #contact input::placeholder {
+#section4 .center .contact_box .right_box #contact input::placeholder {
   padding: 10px;
   font-family: "NanumSquareNeo-Variable";
 }
@@ -237,17 +405,17 @@
   font-weight: normal;
   font-style: normal;
 }
-#section3 .center .contact_box .right_box #contact textarea {
+#section4 .center .contact_box .right_box #contact textarea {
   margin: 5px 0;
-  width: 90%;
+  width: 80%;
   height: 150px;
   resize: none;
 }
-#section3 .center .contact_box .right_box #contact textarea::-moz-placeholder {
+#section4 .center .contact_box .right_box #contact textarea::-moz-placeholder {
   padding: 10px;
   font-family: "NanumSquareNeo-Variable";
 }
-#section3 .center .contact_box .right_box #contact textarea::placeholder {
+#section4 .center .contact_box .right_box #contact textarea::placeholder {
   padding: 10px;
   font-family: "NanumSquareNeo-Variable";
 }
@@ -257,7 +425,7 @@
   font-weight: normal;
   font-style: normal;
 }
-#section3 .center .contact_box .right_box #contact button {
+#section4 .center .contact_box .right_box #contact button {
   width: 90px;
   height: 30px;
   margin: 0 auto;
@@ -272,7 +440,7 @@
   font-weight: normal;
   font-style: normal;
 }
-#section3 .center .contact_box .right_box #contact button:hover {
+#section4 .center .contact_box .right_box #contact button:hover {
   transition: all 0.3s;
   border: 1px solid #ff8800;
   background-color: #ff8800;
